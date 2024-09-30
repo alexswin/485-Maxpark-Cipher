@@ -16,7 +16,7 @@ $ pip install numpy
 
 ### User Input
 
-When you start the script, you will be prompted to enter your matrix values. At this point, you should have already done the setup step with k1. If your k1 was alphabetical (ex. ABCDEFGH), this is how you should input the values into the script:
+When you start the script, you will be prompted to enter your matrix values. At this point, you should have already done the setup step with k<sub>s</sub>. If your k<sub>s</sub> was alphabetical (ex. ABCDEFGH), this is how you should input the values into the script:
 
 ```
 Enter your 3x3x3 matrix (3 lines, 3 space-separated strings (ex. A B C) each, for each layer):
