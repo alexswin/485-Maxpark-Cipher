@@ -14,7 +14,7 @@ def get_k_r():
   ctr = 0
   while ctr < len(in_str):
     new_str = in_str[ctr].upper()
-    if(ctr+1 < len(in_str) and in_str[ctr+1] == "'"):
+    if(ctr+1 < len(in_str) and (in_str[ctr+1] == "'" or in_str[ctr+1] == "’")):
         in_str += "'"
         ctr += 1
     ctr += 1
