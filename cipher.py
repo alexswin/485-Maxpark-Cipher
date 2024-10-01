@@ -15,16 +15,15 @@ def get_k_r():
   while ctr < len(in_str):
     new_str = in_str[ctr].upper()
     if(ctr+1 < len(in_str) and (in_str[ctr+1] == "'" or in_str[ctr+1] == "’")):
-      print(in_str[ctr+1])
       in_str += "\'"
       ctr += 1
     ctr += 1
     try:
-      print(new_str)
       valid.index(new_str)
       k_r.append(new_str)
     except ValueError:
       raise Exception("Error: k_r must contain ONLY \"U\", \"U'\", \"D\", \"D'\", \"F\", \"F'\", \"B\", \"B'\", \"L\", \"L'\", \"R\", \"R'\"")
+    print(k_r)
   return k_r
   
 def main():
