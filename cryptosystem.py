@@ -4,7 +4,7 @@ class Cipher:
     #Initialize with k_s (setup key) and FIXME: k_r (rotation key) 
     def __init__(self, k_s, k_r):
         self.k_s = k_s.upper()
-        self.k_r = k_r     #I'm not currently using this at all; your code would need to do that ¯\_ (ツ)_/¯
+        self.k_r = k_r
         
         #REMOVE DUPLICATES FROM k_s
         key_unique = []
