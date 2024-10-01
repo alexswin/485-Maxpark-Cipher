@@ -151,15 +151,7 @@ def rotate_layer(matrix, layer_index, isClockwise: bool):
     return matrix
 
 def scramble_cube(matrix, k_r):
-    K_R = []
-    ctr = 0
-    while ctr < len(k_r):
-        K_R.append(k_r[ctr])
-        if(ctr+1 < len(k_r) and k_r[ctr+1] == "'"):
-            K_R[-1] += "'"
-            ctr += 1
-        ctr += 1
-    for choice in K_R:
+    for choice in k_r:
         if choice == 'U':
             rotate_layer(matrix, 2, True)
         elif choice == 'U\'':
