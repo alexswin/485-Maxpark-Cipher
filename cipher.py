@@ -10,20 +10,20 @@ def get_k_s():
 def get_k_r():
   in_str = input("\nEnter your rotation key: ")
   valid = ["U","U'","D","D'","R","R'","L","L'","F","F'","B","B'"]
-  k_r = []
-  ctr = 0
-  while ctr < len(in_str):
-    new_str = in_str[ctr].upper()
-    if(ctr+1 < len(in_str) and (in_str[ctr+1] == "'" or in_str[ctr+1] == "’")):
-      in_str += "\'"
-      ctr += 1
-    ctr += 1
-    try:
-      valid.index(new_str)
-      k_r.append(new_str)
-    except ValueError:
-      raise Exception("Error: k_r must contain ONLY \"U\", \"U'\", \"D\", \"D'\", \"F\", \"F'\", \"B\", \"B'\", \"L\", \"L'\", \"R\", \"R'\"")
-    print(k_r)
+  k_r = list(map(str, input().split()))
+  #ctr = 0
+  #while ctr < len(in_str):
+  #  new_str = in_str[ctr].upper()
+  #  if(ctr+1 < len(in_str) and (in_str[ctr+1] == "'" or in_str[ctr+1] == "’")):
+  #    in_str += "\'"
+  #    ctr += 1
+  #  ctr += 1
+  #  try:
+  #    valid.index(new_str)
+  #    k_r.append(new_str)
+  #  except ValueError:
+  #    raise Exception("Error: k_r must contain ONLY \"U\", \"U'\", \"D\", \"D'\", \"F\", \"F'\", \"B\", \"B'\", \"L\", \"L'\", \"R\", \"R'\"")
+  print(k_r)
   return k_r
   
 def main():
