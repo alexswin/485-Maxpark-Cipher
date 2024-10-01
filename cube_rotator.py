@@ -1,23 +1,16 @@
 import numpy as np
 
-def get_matrix():
-    layer_names = ["Bottom", "Middle", "Top"]
-    print("Enter your 3x3x3 matrix (3 lines, 3 space-separated strings (ex. A B C) each, for each layer):")
+def get_matrix(key_s_complete):
     matrix = []
     for i in range(3):
         layer = []
-        print(f"{layer_names[i]} Layer (z={i}):")
-        for _ in range(3):
-            row = list(map(str, input().split()))
-            layer.append(row)
+        for j in range(3):
+            row = []
+            for k in range(3):
+                row.append(key_s_complete[9*i + 3*j + k])
+            layer.insert(0,row)
         matrix.append(layer)
     return np.array(matrix)
-
-def display_matrix(matrix):
-    layer_names = ["Bottom", "Middle", "Top"]
-    for i in range(3):
-        print(f"{layer_names[2-i]} Layer (z={2-i}):")
-        print(matrix[2-i])
 
 def rotate_left(matrix, isClockwise):
     temp = matrix.copy()
@@ -157,58 +150,39 @@ def rotate_layer(matrix, layer_index, isClockwise: bool):
         matrix[layer_index] = np.rot90(matrix[layer_index], k=1)
     return matrix
 
-def main():
-    matrix = get_matrix()
-    
-    while True:
-        print("\nCurrent Matrix:")
-        display_matrix(matrix)
-        
-        choice = input("\nEnter 'quit' to stop.\nThe move options are U, U', D, D', R, R', L, L', F, F', B, B'.\nEnter the move you'd like to make: ")
-        if choice == 'quit':
-            break
-
+def scramble_cube(matrix, k_r):
+    K_R = []
+    ctr = 0
+    while ctr < len(k_r):
+        K_R.append(k_r[ctr])
+        if(ctr+1 < len(k_r) and k_r[ctr+1] == "'"):
+            K_R[-1] += "'"
+            ctr += 1
+        ctr += 1
+    for choice in K_R:
         if choice == 'U':
-            print("Rotating up clockwise")
             rotate_layer(matrix, 2, True)
         elif choice == 'U\'':
-            print("Rotating up counterclockwise")
             rotate_layer(matrix, 2, False)
         elif choice == 'D':
-            print("Rotating down clockwise")
             rotate_layer(matrix, 0, False)
         elif choice == 'D\'':
-            print("Rotating down counterclockwise")
             rotate_layer(matrix, 0, True)
         elif choice == 'F':
-            print("Rotating front clockwise")
             rotate_front(matrix, True)
         elif choice == 'F\'':
-            print("Rotating front counterclockwise")
             rotate_front(matrix, False)
         elif choice == 'B':
-            print("Rotating back clockwise")
             rotate_back(matrix, True)
         elif choice == 'B\'':
-            print("Rotating back counterclockwise")
             rotate_back(matrix, False)
         elif choice == 'L':
-            print("Rotating left clockwise")
             rotate_left(matrix, True)
         elif choice == 'L\'':
-            print("Rotating left counterclockwise")
             rotate_left(matrix, False)    
         elif choice == 'R':
-            print("Rotating right clockwise")
             rotate_right(matrix, True)
         elif choice == 'R\'':
-            print("Rotating right counterclockwise")
             rotate_right(matrix, False)
         else:
-            break
-
-    print("\nNew Matrix:")
-    display_matrix(matrix)
-
-if __name__ == "__main__":
-    main()
+            raise Exception("Error: k_r must be a string consisting ONLY of U, U', D, D', F, F', B, B', L, L', R, R'")
