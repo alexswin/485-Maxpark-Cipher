@@ -19,10 +19,11 @@ def get_k_r():
         ctr += 1
     ctr += 1
     try:
+      print(new_str)
       valid.index(new_str)
       k_r.append(new_str)
     except ValueError:
-      raise Exception("Error: k_r must be a vector containing ONLY \"U\", \"U'\", \"D\", \"D'\", \"F\", \"F'\", \"B\", \"B'\", \"L\", \"L'\", \"R\", \"R'\"")
+      raise Exception("Error: k_r must contain ONLY \"U\", \"U'\", \"D\", \"D'\", \"F\", \"F'\", \"B\", \"B'\", \"L\", \"L'\", \"R\", \"R'\"")
   return k_r
   
 def main():
