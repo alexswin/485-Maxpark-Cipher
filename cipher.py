@@ -10,6 +10,7 @@ def get_k_s():
 def get_k_r():
   in_str = input("\nEnter your rotation key: ")
   valid = ["U","U\'","D","D\'","R","R\'","L","L\'","F","F\'","B","B\'"]
+  '''
   k_r = []
   ctr = 0
   while ctr < len(in_str):
@@ -24,6 +25,8 @@ def get_k_r():
     except ValueError:
       raise Exception("Error: k_r must contain ONLY \"U\", \"U'\", \"D\", \"D'\", \"F\", \"F'\", \"B\", \"B'\", \"L\", \"L'\", \"R\", \"R'\"")
   print(k_r)
+  '''
+  k_r = list(map(str, input().split()))
   return k_r
   
 def main():
