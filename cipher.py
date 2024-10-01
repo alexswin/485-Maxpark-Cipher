@@ -16,7 +16,7 @@ def get_k_r():
     new_str = in_str[ctr].upper()
     if(ctr+1 < len(in_str) and (in_str[ctr+1] == "'" or in_str[ctr+1] == "’")):
       print(in_str[ctr+1])
-      in_str += "'"
+      in_str += "\'"
       ctr += 1
     ctr += 1
     try:
