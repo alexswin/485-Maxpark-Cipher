@@ -177,4 +177,4 @@ def scramble_cube(matrix, k_r):
         elif choice == 'R\'':
             rotate_right(matrix, False)
         else:
-            raise Exception("Error: k_r must be a string consisting ONLY of U, U', D, D', F, F', B, B', L, L', R, R'")
+            raise Exception("Error: k_r must be a vector containing ONLY \"U\", \"U'\", \"D\", \"D'\", \"F\", \"F'\", \"B\", \"B'\", \"L\", \"L'\", \"R\", \"R'\"")
