@@ -8,9 +8,9 @@ def get_k_s():
   return k_s
 
 def get_k_r():
-  in_str = input("\nEnter your rotation key, separated by spaces: ")
+  in_str = input("\nEnter your rotation key: ")
   valid = ["U","U\'","D","D\'","R","R\'","L","L\'","F","F\'","B","B\'"]
-  #k_r = list(map(str, input().split()))
+  k_r = []
   ctr = 0
   while ctr < len(in_str):
     new_str = in_str[ctr].upper()
