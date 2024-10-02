@@ -9,24 +9,12 @@ def get_k_s():
 
 def get_k_r():
   in_str = input("\nEnter your rotation key: ")
+  print(f"Raw input: {in_str}")  # Debugging: print the raw input
+  in_str = in_str.replace("’", "'")
+  print(f"Normalized input: {in_str}")  # Debugging: print the normalized input
   valid = ["U","U\'","D","D\'","R","R\'","L","L\'","F","F\'","B","B\'"]
-  '''
-  k_r = []
-  ctr = 0
-  while ctr < len(in_str):
-    new_str = in_str[ctr].upper()
-    if(ctr+1 < len(in_str) and (in_str[ctr+1] == "\'" or in_str[ctr+1] == "’")):
-      in_str += "\'"
-      ctr += 1
-    ctr += 1
-    try:
-      valid.index(new_str)
-      k_r.append(new_str)
-    except ValueError:
-      raise Exception("Error: k_r must contain ONLY \"U\", \"U'\", \"D\", \"D'\", \"F\", \"F'\", \"B\", \"B'\", \"L\", \"L'\", \"R\", \"R'\"")
+  k_r = in_str.split()
   print(k_r)
-  '''
-  k_r = list(map(str, input().split()))
   return k_r
   
 def main():
@@ -42,11 +30,11 @@ def main():
     if choice.lower() == 'encrypt':
       ptext = input("\nEnter the plaintext you want to encrypt: ")
       cipher = cs.Cipher(k_s, k_r)
-      print("\nCiphertext: \n", cipher.encrypt(ptext), "\n\n")
+      print("\nCiphertext:\n", cipher.encrypt(ptext), "\n\n")
     elif choice.lower() == 'decrypt':
       ctext = input("\nEnter the ciphertext you want to decrypt: ")
       cipher = cs.Cipher(k_s, k_r)
-      print("\nPlaintext: \n", cipher.decrypt(ctext), "\n\n")
+      print("\nPlaintext:\n", cipher.decrypt(ctext), "\n\n")
     elif choice.lower() == 'newkeys':
       k_s = get_k_s()
       k_r = get_k_r()
