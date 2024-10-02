@@ -12,7 +12,6 @@ def get_k_r():
   in_str = in_str.replace("’", "'")
   valid = ["U","U\'","D","D\'","R","R\'","L","L\'","F","F\'","B","B\'"]
   k_r = in_str.split()
-  print(k_r)
   return k_r
   
 def main():
