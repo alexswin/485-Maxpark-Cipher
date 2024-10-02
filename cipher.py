@@ -9,9 +9,7 @@ def get_k_s():
 
 def get_k_r():
   in_str = input("\nEnter your rotation key, with each rotation separated by a space: ")
-  print(f"Raw input: {in_str}")  # Debugging: print the raw input
   in_str = in_str.replace("’", "'")
-  print(f"Normalized input: {in_str}")  # Debugging: print the normalized input
   valid = ["U","U\'","D","D\'","R","R\'","L","L\'","F","F\'","B","B\'"]
   k_r = in_str.split()
   print(k_r)
