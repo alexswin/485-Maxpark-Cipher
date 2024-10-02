@@ -8,10 +8,10 @@ This code will allow you to encrypt and decrypt text using the Maxpark Cipher (d
 $ python3 cipher.py
 ```
 
-You may be prompted by your shell to install numpy and/or secrets.
+You may be prompted by your shell to install numpy.
 
 ```
-$ pip install numpy secrets
+$ pip install numpy
 ```
 
 ### User Input
