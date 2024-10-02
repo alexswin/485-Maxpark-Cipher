@@ -26,4 +26,4 @@ The rotation key should consist of some combination of the following, separated 
 Enter your rotation key, with each rotation separated by a space: F' B R' R' F U U L U'
 ```
 
-Next, you will be asked whether you wish to encrypt or decrypt. Upon selecting an option, you will be prompted for the plaintext or ciphertext.
+Next, you will be asked whether you wish to encrypt or decrypt. Upon selecting an option, you will be prompted to enter the plaintext or ciphertext.
