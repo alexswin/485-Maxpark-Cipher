@@ -269,6 +269,14 @@ class Cipher:
     
     #Final decryption step
     def decrypt(self, ctext):
+        #Trim whitespace and set uppercase
+        new_ctext = ""
+        alphabet = "abcdefghijklmnopqrstuvwxyz".upper()
+        for i in ctext:
+            if alphabet.count(i.upper()) > 0:
+                new_ctext += i.upper()
+        ctext = new_ctext
+        
         ctext_2 = self.__decr_ctext_2(ctext)
         ctext_1 = self.__decr_ctext_1(ctext_2)
         ptext = ""
