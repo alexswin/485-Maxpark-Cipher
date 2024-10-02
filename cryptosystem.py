@@ -206,9 +206,11 @@ class Cipher:
             #If (1,1,1), insert random nonalphabetic character
             if lookup == "111":
                 poss_chars = ["~","!","@","#","$","%","^","&","*","(",")","-","_","+","=","|","`","?",",",".","/","[","]","{","}"]
-                import secrets
-                rindx = secrets.randbelow(len(poss_chars))
-                ctext += poss_chars[rindx]
+                #import secrets
+                #rindx = secrets.randbelow(len(poss_chars))
+                import random
+                #ctext += poss_chars[rindx]
+                ctext += random.choice(poss_chars)
                 #ctext += "!"
             else:
                 ctext += self.scrambled_coords_c[lookup]
