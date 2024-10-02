@@ -1,3 +1,5 @@
+import numpy as np
+
 def get_k_s():
   in_str = input("\nEnter your setup key: ")
   alphabet = "abcdefghijklmnopqrstuvwxyz".upper()
