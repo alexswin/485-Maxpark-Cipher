@@ -1,5 +1,7 @@
 #Main methods: encrypt(ptext) and decrypt(ctext)
 
+nonalph_chars = ["~","!","@","#","$","%","^","&","*","(",")","-","_","+","=","|","`","?",",",".","/","[","]","{","}"]
+
 class Cipher:
     #Initialize with k_s (setup key) and FIXME: k_r (rotation key) 
     def __init__(self, k_s, k_r):
@@ -205,12 +207,11 @@ class Cipher:
                 lookup += str(j)
             #If (1,1,1), insert random nonalphabetic character
             if lookup == "111":
-                poss_chars = ["~","!","@","#","$","%","^","&","*","(",")","-","_","+","=","|","`","?",",",".","/","[","]","{","}"]
                 #import secrets
-                #rindx = secrets.randbelow(len(poss_chars))
+                #rindx = secrets.randbelow(len(nonalph_chars))
                 import random
-                #ctext += poss_chars[rindx]
-                ctext += random.choice(poss_chars)
+                #ctext += nonalph_chars[rindx]
+                ctext += random.choice(nonalph_chars)
                 #ctext += "!"
             else:
                 ctext += self.scrambled_coords_c[lookup]
@@ -272,6 +273,8 @@ class Cipher:
         #Trim whitespace and set uppercase
         new_ctext = ""
         alphabet = "abcdefghijklmnopqrstuvwxyz".upper()
+        for i in nonalph_chars:
+            alphabet += str(i)
         for i in ctext:
             if alphabet.count(i.upper()) > 0:
                 new_ctext += i.upper()
