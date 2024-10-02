@@ -202,7 +202,7 @@ class Cipher:
         for i in triples:
             lookup = ""
             for j in i:
-                lookup = str(j)
+                lookup += str(j)
             #If (1,1,1), insert random nonalphabetic character
             if lookup == "111":
                 poss_chars = ["~","!","@","#","$","%","^","&","*","(",")","-","_","+","=","|","`","?",",",".","/","[","]","{","}"]
@@ -278,5 +278,3 @@ class Cipher:
                 curr_trip = ""
         return ptext
     
-
-
