@@ -16,9 +16,14 @@ $ pip install numpy
 
 ### User Input
 
-When you start the script, you will be prompted to enter the cipher keys. The setup key should be a string of letters of the alphabet. The rotation key should consist of some combination of the following, separated by spaces: U, U', D, D', F, F', B, B', L, L', R, R'. For example:
+When you start the script, you will be prompted to enter the cipher keys. The setup key should be a string of letters of the alphabet. For example:
 ```
-F' B R' R' F U U L U'
+Enter your setup key: COCONUTS
+```
+
+The rotation key should consist of some combination of the following, separated by spaces: U, U', D, D', F, F', B, B', L, L', R, R'. For example:
+```
+Enter your rotation key, with each rotation separated by a space: F' B R' R' F U U L U'
 ```
 
 Next, you will be asked whether you wish to encrypt or decrypt. Upon selecting an option, you will be prompted for the plaintext or ciphertext.
